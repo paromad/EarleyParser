@@ -1,7 +1,7 @@
 #pragma once
 
-#include "symbol.h"
 #include "grammar.h"
+#include "symbol.h"
 
 class Situation {
     Symbol from_;
@@ -11,7 +11,7 @@ class Situation {
 
 public:
     Situation(Symbol from, const std::vector<Symbol> &to, size_t start_position = 0)
-            : from_(from), to_(to), start_position_(start_position), dot_position_(0){};
+        : from_(from), to_(to), start_position_(start_position), dot_position_(0){};
 
     bool IsDotInEnd() const {
         return dot_position_ == to_.size();
@@ -85,7 +85,9 @@ struct SituationList {
     };
 
     void AddSituations(const std::vector<Situation> &situations_to_add) {
-        for (const auto &situation : situations_to_add) { AddSituation(situation); }
+        for (const auto &situation : situations_to_add) {
+            AddSituation(situation);
+        }
     }
 };
 
@@ -103,7 +105,7 @@ public:
         return grammar_.GetStart();
     }
 
-    const Grammar& GetGrammar() const {
+    const Grammar &GetGrammar() const {
         return grammar_;
     }
 

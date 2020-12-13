@@ -1,12 +1,12 @@
 #include <gtest/gtest.h>
 
-#include <vector>
 #include <iostream>
+#include <vector>
 
-#include "symbol.h"
-#include "grammar.h"
 #include "earley_parser.h"
+#include "grammar.h"
 #include "solver.h"
+#include "symbol.h"
 
 std::pair<Symbol, std::vector<Symbol>> get_unary_rule() {
     Symbol S(false);

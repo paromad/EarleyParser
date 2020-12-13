@@ -55,7 +55,9 @@ class std::hash<std::vector<Symbol>> {
 public:
     size_t operator()(const std::vector<Symbol> &obj) const {
         size_t seed = 0;
-        for (const auto &v : obj) { hash_combine(seed, v); }
+        for (const auto &v : obj) {
+            hash_combine(seed, v);
+        }
         return seed;
     }
 };

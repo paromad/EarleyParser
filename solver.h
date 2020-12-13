@@ -8,8 +8,9 @@
 class Solver {
     std::unordered_map<char, Symbol> mapping;
     Grammar grammar;
+
 public:
-    Solver(std::istream& cin = std::cin, std::ostream& cout = std::cout) {
+    Solver(std::istream &cin = std::cin, std::ostream &cout = std::cout) {
         for (char c = 'a'; c <= 'z'; ++c) {
             mapping.insert({c, Symbol(true)});
         }
@@ -40,7 +41,7 @@ public:
         }
     }
 
-    bool Solve(const std::string& word) const {
+    bool Solve(const std::string &word) const {
         EarleyParser parser(grammar);
         std::vector<Symbol> symbol_word;
         if (word != "-") {
